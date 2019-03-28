@@ -8,6 +8,7 @@ class Application
       item_name = req.path.split("/items/").last
       wanted_item = Item.all.find {|item| item.name == item_name}
       unless wanted_item = nil
+        binding.pry
         resp.write wanted_item.price
         resp.status = 200
       else
