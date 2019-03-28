@@ -9,13 +9,8 @@ class Application
       wanted_item = Item.all.find {|item| item.name == item_name}
       resp.write wanted_item.price
     else
-      
+      resp.write "404 Error"
     end
-
-    # @@songs.each do |song|
-    #   resp.write "#{song.title}\n"
-    # end
-
     resp.finish
   end
 end
