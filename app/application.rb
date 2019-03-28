@@ -4,10 +4,12 @@ class Application
     resp = Rack::Response.new
     req = Rack::Request.new(env)
 
-    req.path.match(/items/)
-    @@songs.each do |song|
-      resp.write "#{song.title}\n"
-    end
+    if req.path.match(/items/)
+      
+
+    # @@songs.each do |song|
+    #   resp.write "#{song.title}\n"
+    # end
 
     resp.finish
   end
