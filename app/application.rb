@@ -6,7 +6,7 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      Item.all.find
+      Item.all.find {|item| item.name == item_name}
 
     # @@songs.each do |song|
     #   resp.write "#{song.title}\n"
